@@ -8,7 +8,7 @@ from scraper import get_links, parse_page_data
 links = get_links()
 data = parse_page_data(links)
 
-model = pickle.load(open("finalized_model.sav", 'rb'))
+model = pickle.load(open("./model/finalized_model.sav", 'rb'))
 y = model.predict(data)
 
 indices = np.argwhere(y == np.max(y)).flatten()
